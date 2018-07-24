@@ -64,12 +64,21 @@ print(x)
 mean(x)
 mean(na.omit(data[, "Wind"]))
 mean(na.omit(data[, "Temp"]))
-##Question 14 Extract the subset of rows of the data frame where Ozone values are above 26 and Temp values are above 80. What is the mean of Solar.R in this subset?
+##Question 14 
 data <- read.csv("C:/Users/RM A-225/Documents/Cirilene/Prelim_Repo/hw1_data.csv")
-data <- list ("Ozone" >26, "Temp" >80)
-data[c(1, 2)]
-## Question 15 What is the mean of "Temp" when "Month" is equal to 8 or 6?
+data.sub <- data[data$Ozone >26 , , drop =FALSE]
+data.subTO <- data.subO [data.subO$Temp >80 , , drop =FALSE]
+data.subTOO <- na.omit(data.subTO)
+mean(data.subTOO$Solar.R)
+
+## Question 15 
 data <- read.csv("C:/Users/RM A-225/Documents/Cirilene/Prelim_Repo/hw1_data.csv")
 data.June <- data [data$Month == 8, , drop = FALSE]
-mean(data.June
-## Question 16 What was the maximum ozone value in each of the month (i.e. Month = 5)?
+mean(data.June$Temp)
+data.June <- data[data$Month == 6, , drop = FALSE]
+mean(data.June$Temp)
+
+## Question 16 
+data.Month <- data[data$Month == 5, ,drop = FALSE]
+data.MonthO <- na.omit (data.Month)
+max(data.MonthO$Ozone)
